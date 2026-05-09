@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cinema Booking Website</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial;
+    }
+
+    body {
+      background-image: linear-gradient(to top,rgba(0,0,0,0.8) 20% ,transparent 70%) , url("assets/cinema-background.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  background: rgba(0, 0, 0, 0.9);  
+  backdrop-filter: blur(10px);     
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid #333;
+     
+    }
+
+  
+
+
+.nav-links a:hover {
+  color: #ff0000;
+  letter-spacing: 1px;
+}
+
+    .nav-links a {
+      margin-right: 15px;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;    
+  font-weight: bold;   
+  transition: 0.3s;
+    }
+
+    .login-btn {
+      background: red;
+      border: none;
+      padding: 8px 15px;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    /* Login Section */
+    .login-section {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .icon {
+      font-size: 40px;
+      color: red;
+    }
+
+    .card {
+      background: #1a1a1a;
+      padding: 30px;
+      margin: 30px auto;
+      width: 350px;
+      border-radius: 10px;
+      animation: fadeUp 0.8s ease;
+    }
+
+    .card label {
+      display: block;
+      margin-top: 15px;
+      text-align: left;
+    }
+
+    .logo {
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+    
+    .card input:not([type="checkbox"]) {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      background: #333;
+      border: none;
+      color: white;
+      border-radius: 6px;
+    }
+
+    input:focus {
+      outline: none;
+      border: 1px solid red;
+    }
+
+    .options {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin: 15px 0;
+    }
+
+    .remember {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 14px;
+    }
+
+    .remember input {
+      margin: 0;
+      width: auto;
+     
+    }
+
+    .options a {
+      color: red;
+      text-decoration: none;
+    }
+
+    .main-btn {
+      width: 100%;
+      padding: 12px;
+      background: red;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .main-btn:hover {
+      opacity: 0.85;
+      transform: scale(1.05);
+    }
+
+    .signup {
+      margin-top: 10px;
+    }
+
+    .signup span {
+      color: red;
+      cursor: pointer;
+    }
+
+    .divider {
+      margin: 20px 0;
+      color: gray;
+    }
+
+    .socials {
+      display: flex;
+      gap: 10px;
+    }
+
+    .socials button {
+      flex: 1;
+      padding: 10px;
+      background: #333;
+      border: none;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .socials button:hover {
+      opacity: 0.85;
+      transform: scale(1.05);
+    }
+
+    /* Password box */
+    .password-box {
+      position: relative;
+    }
+
+    .password-box span {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+
+    /* Footer */
+   footer {
+  background: #000;
+  padding: 60px 5% 30px;
+  margin-top: 50px;
+  border-top: 1px solid #222;
+  animation: fadeUp 0.8s ease;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.footer-col h3 {
+  margin-bottom: 15px;
+  color: white;
+}
+
+.footer-col p {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+
+
+.copyright {
+  text-align: center;
+  color: #555;
+  font-size: 13px;
+  border-top: 1px solid #222;
+  padding-top: 20px;
+}
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        width: 90%;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+      }
+
+      .navbar {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">🎬 Ctech</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+    </div>
+    
+  </nav>
+
+  <!-- Login Section -->
+  <section class="login-section">
+    <div class="icon">🎬</div>
+    <h1>Welcome Back</h1>
+    <p>Sign in to your Ctech account</p>
+
+    <div class="card">
+      <label>Email Address</label>
+     <input type="email" id="email" placeholder="Enter your email">
+
+      <label>Password</label>
+      <div class="password-box">
+        <input type="password" id="password" placeholder="Enter your password">
+        <span id="toggle">🔒</span>
+      </div>
+
+      <div class="options">
+        <label class="remember">
+          <input type="checkbox">
+          Remember me
+        </label>
+        <a href="#">Forgot password?</a>
+      </div>
+
+     <button class="main-btn" onclick="login()">Sign In</button>
+      <p id="error" style="color:red; margin-top:10px;"></p>
+
+      <p class="signup">Don't have an account? <span>Sign up</span></p>
+
+      <div class="divider">Or continue with</div>
+
+      <div class="socials">
+        <button>Google</button>
+        <button>Facebook</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+ <footer>
+  <div class="footer-container">
+
+    <div class="footer-col">
+      <h3>🎬 Ctech</h3>
+      <p>Your premier destination for booking movie tickets online.</p>
+    </div>
+
+    <div class="footer-col">
+      <h3>Contact Us</h3>
+      <p>📞 +20 112333456</p>
+      <p>📧 info@ctech.com</p>
+    </div>
+
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <p>About Us</p>
+      <p>Privacy Policy</p>
+    </div>
+
+  </div>
+
+  <div class="copyright">
+    &copy; 2026 Ctech Cinema Booking. All rights reserved.
+  </div>
+</footer>
+
+  <script>
+    const toggle = document.getElementById("toggle");
+    const password = document.getElementById("password");
+
+    toggle.onclick = () => {
+      password.type = password.type === "password" ? "text" : "password";
+    };
+
+
+    function login() {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  const error = document.getElementById("error");
+
+  if (email === "" || password === "") {
+    error.innerText = "Please fill all fields!";
+  } else {
+    error.innerText = "";
+    window.location.href = "index.html"; 
+  }
+}
+  </script>
+
+</body>
+</html>
